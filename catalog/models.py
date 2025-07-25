@@ -6,9 +6,11 @@ class Category(models.Model):
     description = models.TextField(max_length=150, verbose_name='Описание')
 
     def __str__(self):
-        return f'{self.category_name} ({self.description})'
+        return f'{self.category_name}'
 
     class Meta:
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
         ordering = ['category_name',]
         db_table = 'categories'
 
@@ -31,5 +33,3 @@ class Product(models.Model):
         verbose_name_plural = 'продукты'
         ordering = ['product_name',]
         db_table = 'products'
-
-

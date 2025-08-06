@@ -14,7 +14,8 @@
                 <div style="float: left; width: 2%;"></div>
                 <div style="float: left; text-align: left;">
                     <a class="btn btn-lg btn-block btn-outline-success" href="{% url 'blog:publication_detail' publication.pk %}">{{publication.heading}}</a>
-                    <p class="card-text">{{publication.text|truncatechars:100}}</p>
+                    <p class="card-text">{{publication.text|truncatechars:200}}</p>
+                    <p>Просмотров: {{publication.views_counter}}</p>
                 </div>
             </div>
     {% endfor %}

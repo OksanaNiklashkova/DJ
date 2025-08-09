@@ -17,11 +17,12 @@ class Category(models.Model):
 
 class Product(models.Model):
     """Модель для создания продуктов"""
-    product_name = models.CharField(max_length=150, verbose_name='Наименование')
-    description = models.TextField(null=True, verbose_name='Описание')
-    image = models.ImageField(null=True, upload_to='images/', verbose_name='Изображение')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name='Категория')
-    price = models.FloatField(verbose_name='Цена')
+    product_name = models.CharField(max_length=150, verbose_name='Наименование', blank=True)
+    description = models.TextField(default='', verbose_name='Описание', blank=True)
+    image = models.ImageField(null=True, upload_to='images/', default='images/placeholder.png', verbose_name='Изображение', blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name='Категория', blank=True)
+    price = models.FloatField(verbose_name='Цена', blank=True)
+    is_active = models.BooleanField(default=True, verbose_name='Доступен')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата последнего изменения')
 

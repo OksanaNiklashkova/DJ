@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+
+from django.conf.global_settings import AUTH_USER_MODEL
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
@@ -63,6 +65,8 @@ DATABASES = {
         'PORT': os.getenv('PORT')
     }
 }
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {

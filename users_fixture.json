@@ -4,7 +4,7 @@
     "pk": 5,
     "fields": {
         "password": "pbkdf2_sha256$1000000$DUmXAYfs0K6raK1Bjkkzat$dam5It8Cz8+MtYfPdWcZ64BmIKljpWXvOL9fatuTyQ0=",
-        "last_login": "2025-08-16T08:55:02Z",
+        "last_login": "2025-08-16T13:33:23.701Z",
         "is_superuser": true,
         "first_name": "",
         "last_name": "",
@@ -18,7 +18,8 @@
         "avatar": "images/placeholder.png",
         "groups": [
             1,
-            2
+            2,
+            3
         ],
         "user_permissions": []
     }
@@ -43,7 +44,12 @@
         "groups": [
             2
         ],
-        "user_permissions": []
+        "user_permissions": [
+            33,
+            34,
+            35,
+            36
+        ]
     }
 },
 {
@@ -51,7 +57,7 @@
     "pk": 12,
     "fields": {
         "password": "pbkdf2_sha256$1000000$YQOOyoy4spCeYsCyMfC2iC$MQD7gxD3e+WCfOf2fTr4WE+W633PUfIYXFWNf816WmE=",
-        "last_login": "2025-08-14T16:16:32Z",
+        "last_login": "2025-08-16T13:48:13.744Z",
         "is_superuser": false,
         "first_name": "",
         "last_name": "",
@@ -75,14 +81,14 @@
     "pk": 15,
     "fields": {
         "password": "pbkdf2_sha256$1000000$AW5iYCFteLXZUpWr5ztuDb$IdrLh9pwEgcsmYzsiDIOotH4hZE9fy8yg6a1BwOK7Z4=",
-        "last_login": "2025-08-16T08:12:55Z",
+        "last_login": "2025-08-16T13:10:47.824Z",
         "is_superuser": false,
         "first_name": "",
         "last_name": "",
         "is_staff": false,
         "is_active": true,
         "date_joined": "2025-08-16T08:12:55Z",
-        "username": "Simle_user",
+        "username": "Simple_user",
         "email": "o.niklashkova@ptk-sm.ru",
         "phone": null,
         "country": null,

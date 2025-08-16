@@ -19,10 +19,14 @@
         <div class="col-1"></div>
         <div class="col-3">
             <div class="row" style="justify-content: space-between;">
-
+                <a href="#" class="btn btn-lg btn-block btn-outline-success"
+                        style="box-shadow: 4px 4px 10px green; margin: 3px;">Купить
+                </a>
+                {% if user == product.owner or perms.catalog.can_unpublish_product %}
                 <a href="{% url 'catalog:product_form' product.pk %}" class="btn btn-secondary"
                    style="margin: 3px;">Редактировать</a>
-                {% if perms.catalog.can_delete_product %}
+                {% endif %}
+                {% if user == product.owner or perms.catalog.delete_product %}
                 <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-danger"
                    style="margin: 3px;">Удалить</a>
                 {% endif %}

@@ -42,5 +42,19 @@ class ProductForm(forms.ModelForm):
         for item in SPAM_WORDS:
             if item.lower() in product_name.lower():
                 self.add_error('product_name','Название продукта не может содержать запрещенные слова!')
-            elif item.lower() in description.lower():
+            if not description:
+                continue
+            if item.lower() in description.lower():
                 self.add_error('description', 'Описание продукта не может содержать запрещенные слова!')
+
+class ProductModeratorForm(forms.ModelForm):
+    """Форма для создания нового продукта"""
+    class Meta:
+        model = Product
+        fields = ['is_published',]
+        exclude = ['owner', 'created_at', 'updated_at']
+
+    # def __init__(self, *args, **kwargs):
+    #     super(ProductForm, self).__init__(*args, **kwargs)
+    #     self.fields['product_name'].widget.attrs.update({'class':'form-control', 'placeholder': 'Название продукта',})
+    #     self.fields['is_published'].widget.attrs.update({'class': 'form-check-input'})

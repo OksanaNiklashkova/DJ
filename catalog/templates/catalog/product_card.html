@@ -19,19 +19,24 @@
         <div class="col-1"></div>
         <div class="col-3">
             <div class="row" style="justify-content: space-between;">
+
                 <a href="{% url 'catalog:product_form' product.pk %}" class="btn btn-secondary"
                    style="margin: 3px;">Редактировать</a>
+                {% if perms.catalog.can_delete_product %}
                 <a href="{% url 'catalog:product_delete' product.pk %}" class="btn btn-danger"
                    style="margin: 3px;">Удалить</a>
+                {% endif %}
                 <a href="{% url 'catalog:home' %}" class="btn btn-primary" style="margin: 3px;">Вернуться
                     к списку</a>
             </div>
+            {% if perms.catalog.can_unpublish_product %}
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" {% if product.is_active %}checked{% else %}{% endif %}>
-                <label class="form-check-label" for="flexCheckChecked">
-                    Доступен
+                <input class="form-check-input" type="checkbox" value="true" id="flexCheckCheckedDisabled" {% if product.is_published %}checked{% else %}{% endif %}>
+                <label class="form-check-label" for="flexCheckCheckedDisabled">
+                    Опубликовано
                 </label>
             </div>
+            {% endif %}
         </div>
     </div>
 
